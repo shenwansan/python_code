@@ -1,8 +1,10 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import MySQLdb
-	__author__='...'  
-	print('Hello World!')
+	#__author__='...'  
+print('Hello World!')
+	
+def databaseopertion():
 	# 打开数据库连接
 	db = MySQLdb.connect("localhost", "root", "123456", "test1", charset='utf8' )
 
@@ -49,14 +51,14 @@ import MySQLdb
 		# 获取所有记录列表
 		results = cursor.fetchall()
 		for row in results:
-		fname = row[0]
-		lname = row[1]
-		age = row[2]
-		sex = row[3]
-		income = row[4]
+			fname = row[0]
+			lname = row[1]
+			age = row[2]
+			sex = row[3]
+			income = row[4]
 		# 打印结果
-		print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
-				(fname, lname, age, sex, income )
+			print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
+					(fname, lname, age, sex, income )
 	except:
 		print "Error: unable to fecth data"
 	
@@ -66,3 +68,5 @@ import MySQLdb
 	# 关闭数据库连接
 	db.close()
 
+if __name__ == '__main__':
+	databaseopertion()
