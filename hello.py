@@ -20,7 +20,7 @@ def databaseopertion():
 	print "Database version : %s " % data
 	
 	# 创建数据表SQL语句
-	sql = """CREATE TABLE EMPLOYEE (
+	sql = """CREATE TABLE  IF NOT EXISTS `EMPLOYEE`(
 			FIRST_NAME  CHAR(20) NOT NULL,
 			LAST_NAME  CHAR(20),
 			AGE INT,
@@ -63,7 +63,7 @@ def databaseopertion():
 		print "Error: unable to fecth data"
 	
 	 # 如果数据表已经存在使用 execute() 方法删除表。
-		cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
+	cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
 	
 	# 关闭数据库连接
 	db.close()
